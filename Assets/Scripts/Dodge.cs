@@ -12,4 +12,8 @@ public class Dodge : MonoBehaviour
     void Start() {
         movement.lastRememberedPosition = Vector3.up;
     }
+
+    void OnCollisionEnter(Collision other) {
+        Debug.Log("Ahahah mechanics");
+    } 
 }
