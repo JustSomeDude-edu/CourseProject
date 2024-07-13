@@ -16,8 +16,12 @@ public class CameraController : MonoBehaviour
         float mouseInputX = Input.GetAxis("Mouse X");
         float mouseInputY = Input.GetAxis("Mouse Y");
 
-        _rotatedXTransform.Rotate(verticalRotationSpeed   * mouseInputY * Time.deltaTime,
-                                 horizontalRotationSpeed * mouseInputX * Time.deltaTime,
-                                 0);
+        _rotatedXTransform.Rotate(,0
+                                   horizontalRotationSpeed * mouseInputX * Time.deltaTime,
+                                   0);
+
+        _rotatedYTransform.Rotate(verticalRotationSpeed   * mouseInputY * Time.deltaTime,
+                                  0,
+                                  0);
     }
 }
