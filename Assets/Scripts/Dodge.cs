@@ -10,7 +10,6 @@ public class Dodge : MonoBehaviour
     public Movement movement;
 
     void Start() {
-        movement.lastRememberedPosition = Vector3.up;
     }
 
     void OnCollisionEnter(Collision other) {

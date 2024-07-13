@@ -5,15 +5,17 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public Vector3 lastRememberedPosition;
-
     public Rigidbody rbody;
 
-    public float speed;
+    public float acceleration;
+    public float maxSpeed;
     void FixedUpdate()
     {
-        Vector3 direction = rbody.transform.forward;
-        Vector3 resultForce = direction * speed * Input.GetAxis("Vertical");
-        rbody.AddForce(resultForce, ForceMode.Force);
+        Vector3 directionForward = rbody.transform.forward * Input.GetAxis("Vertical");
+        Vector3 directionRight =   rbody.transform.right   * Input.GetAxis("Horizontal");
+        Vector3 result = (directionForward + directionRight).normalized;
+        if (rbody.velocity.magnitude < maxSpeed)
+            rbody.AddForce(result * acceleration, ForceMode.Acceleration);
+        Debug.Log(rbody.velocity.magnitude);
     }
 }
