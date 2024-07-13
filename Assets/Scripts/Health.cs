@@ -10,6 +10,10 @@ public class Health : MonoBehaviour
     public void Damage(float damage, Vector3 knockback) {
         onDamaged.Invoke(damage, knockback);
     }
+
+    void FixedUpdate() {
+        Debug.Log("Other logic");
+    }
 }
 
 [System.Serializable]
